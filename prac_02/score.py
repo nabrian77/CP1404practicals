@@ -19,15 +19,34 @@ bad
 
 # TODO: Fix this!
 
-score = float(input("Enter score: "))
-if score < 0:
-    print("Invalid score")
-else:
-    if score > 100:
-        print("Invalid score")
-    elif score > 90:
-        print("Excellent")
-    elif score > 50:
-        print("Passable")
+def main():
+    score = float(input("Enter score: "))
+    final_result = score_result(score)
+    print(final_result)
+    import random
+    random_result = score_result(random.randint(1, 101))
+    print(random_result)
+
+
+def score_result(user_score):
+    if user_score < 0:
+        score_grade = "Invalid score"
+        return score_grade
     else:
-        print("Bad")
+        if user_score > 100:
+            score_grade = "Invalid score"
+            return score_grade
+        elif user_score > 90:
+            score_grade = "Excellent"
+            return score_grade
+        elif user_score > 50:
+            score_grade = "Passable"
+            return score_grade
+        else:
+            score_grade = "Bad"
+            return score_grade
+
+
+main()
+
+
